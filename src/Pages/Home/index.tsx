@@ -1,10 +1,15 @@
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
 
+import { CoffeeCard } from './components/CoffeeCard'
+
 import {
   InfoBackgroundImage,
   InfoContainer,
   InfoDescriptionsContainer,
   Grid,
+  CoffeeCardGrid,
+  CoffeeCardsContainer,
+  CoffeeCardsTitle,
 } from './styles'
 
 import coffeeImage from '../../assets/coffee.svg'
@@ -33,21 +38,21 @@ export function Home() {
                 </span>
 
                 <span>
-                  <div className="PackageIcon">
+                  <div className="packageIcon">
                     <Package size={16} weight="fill" />
                   </div>
                   Embalagem mantém o café intacto
                 </span>
 
                 <span>
-                  <div className="TimerIcon">
+                  <div className="timerIcon">
                     <Timer size={16} weight="fill" />
                   </div>
                   Entrega rápida e rastreada
                 </span>
 
                 <span>
-                  <div className="CoffeeIcon">
+                  <div className="coffeeIcon">
                     <Coffee size={16} weight="fill" />
                   </div>
                   O café chega fresquinho até você
@@ -58,7 +63,17 @@ export function Home() {
           </InfoContainer>
         </DefaultLayout>
       </InfoBackgroundImage>
-      <div></div>
+      <DefaultLayout>
+        <CoffeeCardsContainer>
+          <CoffeeCardsTitle>Nossos Cafés</CoffeeCardsTitle>
+
+          <CoffeeCardGrid>
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, index) => (
+              <CoffeeCard key={index} />
+            ))}
+          </CoffeeCardGrid>
+        </CoffeeCardsContainer>
+      </DefaultLayout>
     </>
   )
 }

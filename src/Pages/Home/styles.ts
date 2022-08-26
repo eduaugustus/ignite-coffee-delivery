@@ -66,17 +66,38 @@ export const Grid = styled.div`
         background: ${(props) => props.theme['yellow-dark']};
       }
 
-      &.PackageIcon {
+      &.packageIcon {
         background: ${(props) => props.theme['base-text']};
       }
 
-      &.TimerIcon {
+      &.timerIcon {
         background: ${(props) => props.theme.yellow};
       }
 
-      &.CoffeeIcon {
+      &.coffeeIcon {
         background: ${(props) => props.theme.purple};
       }
     }
   }
+`
+
+export const CoffeeCardsContainer = styled.div`
+  margin-top: 2rem;
+`
+
+export const CoffeeCardsTitle = styled.h1`
+  display: inline-block;
+
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 130%;
+`
+
+export const CoffeeCardGrid = styled.div`
+  margin-top: 3.375rem;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
 `
