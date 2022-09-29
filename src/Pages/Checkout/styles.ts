@@ -14,9 +14,11 @@ export const Title = styled.h2`
 
 export const UserInformationContainer = styled.div`
   margin-top: 1rem;
+  max-width: 40rem;
 
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   gap: 0.75rem;
 `
 
@@ -137,6 +139,13 @@ export const PaymentDescriptionSubtitle = styled.span`
   color: ${(props) => props.theme['base-text']};
 `
 
+export const PaymentMethodsContainer = styled.div`
+  display: flex;
+  align-items: center;
+
+  gap: 1.5rem;
+`
+
 export const CoffeeOrderedContainer = styled.div`
   margin-top: 1rem;
 `
@@ -144,5 +153,48 @@ export const CoffeeOrderedContainer = styled.div`
 export const CoffeeOrderedCheckoutContainer = styled.div`
   padding: 2.5rem;
   border-radius: 6px;
+  border-radius: 6px 44px;
   background: ${(props) => props.theme['base-card']};
+`
+
+export const CheckoutCoffeeCard = styled.div`
+  display: flex;
+
+  img {
+    height: 4rem;
+    width: 4rem;
+
+    margin-right: 1.25rem;
+  }
+`
+
+export const Details = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  margin-right: 3.125rem;
+`
+
+export const CoffeeName = styled.span`
+  font-size: 1rem;
+  line-height: 130%;
+  color: ${(props) => props.theme['base-subtitle']};
+`
+
+export const Actions = styled.div`
+  display: flex;
+  gap: 0.5rem;
+`
+
+export const CoffeePrice = styled.span`
+  font-weight: 700;
+  line-height: 130%;
+  color: ${(props) => props.theme['base-subtitle']};
+`
+
+export const Divider = styled.hr`
+  border: 1px solid ${(props) => props.theme['base-button']};
+
+  margin: 1.5rem 0;
 `

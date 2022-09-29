@@ -1,5 +1,8 @@
+import { useState } from 'react'
+
 import { CurrencyDollar, MapPinLine } from 'phosphor-react'
 import { DefaultLayout } from '../../layouts/DefaultLayout'
+import { PaymentSelect } from './components/PaymentSelect'
 import {
   AdressDescriptionContainer,
   AdressDescriptionSubtitle,
@@ -16,14 +19,29 @@ import {
   PaymentDescriptionContainer,
   PaymentDescriptionSubtitle,
   PaymentInfoContainer,
+  PaymentMethodsContainer,
   StreetInput,
   StreetNumberInput,
   Title,
   UFInput,
   UserInformationContainer,
+  CheckoutCoffeeCard,
+  CoffeeName,
+  CoffeePrice,
+  Details,
+  Actions,
+  Divider,
 } from './styles'
+import { Select } from '../../components/Select'
+
+import coffee from '../../assets/coffee-card.png'
+import { RemoveCoffeeButton } from './components/RemoveCoffeeButton'
 
 export function Checkout() {
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<
+    'MONEY' | 'CREDIT_CARD' | 'DEBIT_CARD' | ''
+  >('')
+
   return (
     <DefaultLayout>
       <CheckoutContainer>
@@ -78,12 +96,62 @@ export function Checkout() {
                 </PaymentDescriptionSubtitle>
               </span>
             </PaymentDescriptionContainer>
+
+            <PaymentMethodsContainer>
+              <PaymentSelect
+                paymentType="CREDIT_CARD"
+                isSelected={selectedPaymentMethod === 'CREDIT_CARD'}
+                onClick={() => setSelectedPaymentMethod('CREDIT_CARD')}
+              />
+              <PaymentSelect
+                paymentType="DEBIT_CARD"
+                isSelected={selectedPaymentMethod === 'DEBIT_CARD'}
+                onClick={() => setSelectedPaymentMethod('DEBIT_CARD')}
+              />
+              <PaymentSelect
+                paymentType="MONEY"
+                isSelected={selectedPaymentMethod === 'MONEY'}
+                onClick={() => setSelectedPaymentMethod('MONEY')}
+              />
+            </PaymentMethodsContainer>
           </PaymentInfoContainer>
         </UserInformationContainer>
 
         <CoffeeOrderedContainer>
           <Title>Cafés selecionados</Title>
-          <CoffeeOrderedCheckoutContainer>aa</CoffeeOrderedCheckoutContainer>
+          <CoffeeOrderedCheckoutContainer>
+            <CheckoutCoffeeCard>
+              <img src={coffee} alt="" />
+
+              <Details>
+                <CoffeeName>Expresso Tradicional</CoffeeName>
+                <Actions>
+                  <Select />
+                  <RemoveCoffeeButton onClick={() => {}} />
+                </Actions>
+              </Details>
+
+              <CoffeePrice>R$ 9,90</CoffeePrice>
+            </CheckoutCoffeeCard>
+
+            <Divider />
+
+            <CheckoutCoffeeCard>
+              <img src={coffee} alt="" />
+
+              <Details>
+                <CoffeeName>Expresso Tradicional</CoffeeName>
+                <Actions>
+                  <Select />
+                  <RemoveCoffeeButton onClick={() => {}} />
+                </Actions>
+              </Details>
+
+              <CoffeePrice>R$ 9,90</CoffeePrice>
+            </CheckoutCoffeeCard>
+
+            <Divider />
+          </CoffeeOrderedCheckoutContainer>
         </CoffeeOrderedContainer>
       </CheckoutContainer>
     </DefaultLayout>
