@@ -83,6 +83,7 @@ export const Grid = styled.div`
 
 export const CoffeeCardsContainer = styled.div`
   margin-top: 2rem;
+  margin-bottom: 9.75rem;
 `
 
 export const CoffeeCardsTitle = styled.h1`

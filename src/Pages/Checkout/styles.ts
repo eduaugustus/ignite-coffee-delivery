@@ -148,6 +148,10 @@ export const PaymentMethodsContainer = styled.div`
 
 export const CoffeeOrderedContainer = styled.div`
   margin-top: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 `
 
 export const CoffeeOrderedCheckoutContainer = styled.div`
@@ -155,6 +159,9 @@ export const CoffeeOrderedCheckoutContainer = styled.div`
   border-radius: 6px;
   border-radius: 6px 44px;
   background: ${(props) => props.theme['base-card']};
+
+  display: flex;
+  flex-direction: column;
 `
 
 export const CheckoutCoffeeCard = styled.div`
@@ -197,4 +204,60 @@ export const Divider = styled.hr`
   border: 1px solid ${(props) => props.theme['base-button']};
 
   margin: 1.5rem 0;
+`
+
+export const OrderedResume = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.75rem;
+`
+
+export const OrderedResumeTextDetails = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
+export const OrderedResumeTotalItens = styled.span`
+  font-family: 'Roboto';
+  font-size: 0.875rem;
+  line-height: 130%;
+  color: ${(props) => props.theme['base-text']};
+`
+
+export const OrderedResumeShipping = styled.span`
+  font-family: 'Roboto';
+  font-size: 0.875rem;
+  line-height: 130%;
+  color: ${(props) => props.theme['base-text']};
+`
+
+export const OrderedResumeTotal = styled.span`
+  font-family: 'Roboto';
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 130%;
+  color: ${(props) => props.theme['base-text']};
+`
+
+export const OrderedCheckoutButton = styled.button`
+  margin-top: 1.5rem;
+  padding: 0.75rem 0.5rem;
+  background: ${(props) => props.theme.yellow};
+  border: 0;
+  border-radius: 6px;
+
+  font-family: 'Roboto';
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 160%;
+  color: ${(props) => props.theme.white};
+
+  transition: background 0.2s;
+
+  cursor: pointer;
+
+  &:hover {
+    background: ${(props) => props.theme['yellow-dark']};
+  }
 `

@@ -31,6 +31,12 @@ import {
   Details,
   Actions,
   Divider,
+  OrderedResume,
+  OrderedResumeTotalItens,
+  OrderedResumeShipping,
+  OrderedResumeTotal,
+  OrderedResumeTextDetails,
+  OrderedCheckoutButton,
 } from './styles'
 import { Select } from '../../components/Select'
 
@@ -151,6 +157,28 @@ export function Checkout() {
             </CheckoutCoffeeCard>
 
             <Divider />
+
+            <OrderedResume>
+              <OrderedResumeTextDetails>
+                <OrderedResumeTotalItens>
+                  Total de itens
+                </OrderedResumeTotalItens>
+
+                <OrderedResumeTotalItens>R$ 29,70</OrderedResumeTotalItens>
+              </OrderedResumeTextDetails>
+
+              <OrderedResumeTextDetails>
+                <OrderedResumeShipping>Entrega</OrderedResumeShipping>
+                <OrderedResumeShipping>R$ 3,50</OrderedResumeShipping>
+              </OrderedResumeTextDetails>
+
+              <OrderedResumeTextDetails>
+                <OrderedResumeTotal>Total</OrderedResumeTotal>
+                <OrderedResumeTotal>R$ 33,20</OrderedResumeTotal>
+              </OrderedResumeTextDetails>
+            </OrderedResume>
+
+            <OrderedCheckoutButton>CONFIRMAR PEDIDO</OrderedCheckoutButton>
           </CoffeeOrderedCheckoutContainer>
         </CoffeeOrderedContainer>
       </CheckoutContainer>
